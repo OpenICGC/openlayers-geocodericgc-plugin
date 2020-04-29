@@ -24,7 +24,7 @@
      * Factory function which returns an object with the methods getParameters
      * and handleResponse called by the Geocoder
      */
-    function OsOpenNamesSearch (options) {
+    function ICGCSearch (options) {
       var url = options.url;
       return {
         /**
@@ -39,7 +39,9 @@
             url: url,
             callbackName: 'callback',
             params: {
-              q: options.query
+              text: options.query,
+              layers: 'mun,address,topo,pois,com,pk',
+              size: 50
             }
           };
         },
@@ -59,9 +61,8 @@
                   // Simply return a name in this case, could also return road,
                   // building, house_number, city, town, village, state,
                   // country
-                  name: feature.properties.search_full
-                },
-                bbox: feature.bbox
+                  name: feature.properties.label
+                }
               };
             });
           } else {
@@ -73,8 +74,8 @@
   
     // Create an instance of the custom provider, passing any options that are
     // required
-    var provider = OsOpenNamesSearch({
-      url: '//t0.ads.astuntechnology.com/open/search/osopennames/'
+    var provider = ICGCSearch({
+      url: 'https://aws.icgc.cat/cerca_pelias/autocomplete'
     });
   
     var geocoder = new Geocoder('nominatim', {
