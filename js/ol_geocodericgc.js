@@ -20,7 +20,7 @@
       });
   
     /**
-     * Custom provider for OS OpenNames search covering Great Britian.
+     * Custom provider for ICGC Geocder-
      * Factory function which returns an object with the methods getParameters
      * and handleResponse called by the Geocoder
      */
@@ -41,7 +41,8 @@
               text: options.query,
               layers: 'mun,address,topo,pois,com,pk',
               size: 50
-            }
+            },
+            callbackName:null
           };
         },
         /**
@@ -83,7 +84,7 @@
       autoComplete: true,
       autoCompleteMinLength: 3,
       targetType: 'text-input',
-      lang: 'en',
+      lang: 'ca',
       keepOpen: false,
       preventDefault: true
     });
