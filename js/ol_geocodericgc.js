@@ -37,7 +37,6 @@
         getParameters: function (options) {
           return {
             url: url,
-            callbackName: 'callback',
             params: {
               text: options.query,
               layers: 'mun,address,topo,pois,com,pk',
