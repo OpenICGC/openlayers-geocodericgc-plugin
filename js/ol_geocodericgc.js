@@ -5,8 +5,8 @@
     'use strict';
   
     var olview = new ol.View({
-      center: [-264000, 7480000],
-      zoom: 5,
+      center: [203380, 5119615],
+      zoom: 8,
       minZoom: 2,
       maxZoom: 20
     }),
@@ -39,8 +39,8 @@
             url: url,
             params: {
               text: options.query,
-              layers: 'mun,address,topo,pois,com,pk',
-              size: 50
+              layers: 'topo1,topo2,address',
+              size: 5
             },
             callbackName:null
           };
@@ -75,7 +75,7 @@
     // Create an instance of the custom provider, passing any options that are
     // required
     var provider = ICGCSearch({
-      url: 'https://aws.icgc.cat/cerca_pelias/autocomplete'
+      url: 'https://eines.icgc.cat/geocodificador/autocompletar'
     });
   
     var geocoder = new Geocoder('nominatim', {

@@ -20,7 +20,7 @@ Load CSS and Javascript:
 ```javascript
 
 var providerICGC = ICGCSearch({
-      url: 'https://aws.icgc.cat/cerca_pelias/autocomplete'
+      url: 'https://eines.icgc.cat/geocodificador/autocompletar'
 });
   
 var geocoder = new Geocoder('nominatim', {
